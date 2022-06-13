@@ -15,53 +15,51 @@ public class q3 {
     public static void main(String[] args) {
         int num = sc.nextInt();
         sc.nextLine();
-        Student[] scoreArr = new Student[num];
+        Sheet[] scoreArr = new Sheet[num];
         for (int i = 0; i < num; i++) {
-            scoreArr[i] = new Student(i + 1, inputName(), inputScore(), inputScore(), inputScore());
+            scoreArr[i] = new Sheet(i + 1, inputName(), inputScore(), inputScore(), inputScore());
         }
 
         for (int i = 0; i < num; i++) {
+            System.out.println("I had run"+i+"times");
             System.out.println(scoreArr[i]);
         }
         sc.close();
     }
 }
 
-class Student {
+class Sheet {
     public int id;
     private String name;
-    private Programming pScore;
-    private Chinese cScore;
-    private English eScore;
-    private float scoreAvg;
-    private int credit = 9;
-
-    Student(int id, String name, String p, String c, String e) {
+    private kungPaoChicken kpcPrice;
+    private friedRice frPrice;
+    private friedVegetables fvPrice;
+    private int total_price;
+    Sheet(int id, String name, String p, String c, String e) {
         this.id = id;
         this.name = name;
-        this.pScore = new Programming(Integer.parseInt(p), 120);
-        this.cScore = new Chinese(Integer.parseInt(c), 150);
-        this.eScore = new English(Integer.parseInt(e), 200);
+        this.kpcPrice = new kungPaoChicken(Integer.parseInt(p), 120);
+        this.frPrice = new friedRice(Integer.parseInt(c), 150);
+        this.fvPrice = new friedVegetables(Integer.parseInt(e), 200);
         cal();
     }
 
     @Override
     public String toString() {
-        return name + "的平均是:" + scoreAvg + "分";
+        System.out.println(kpcPrice+" "+frPrice+" "+fvPrice );
+        return name + "的平均是:" + total_price + "分";
     }
 
     public void cal() {
-        scoreAvg = (pScore.creditMultiplyScore() + eScore.creditMultiplyScore() + cScore.creditMultiplyScore())
-                / credit;
+        total_price = (kpcPrice.totalPrice() + frPrice.totalPrice() + fvPrice.totalPrice());
     }
 
     class menu {
         int amount = 0;
-        int pirce = 1;
-
-        memu(int amount, int credit) {
+        int price = 1;
+        menu(int amount, int price) {
             this.amount = amount;
-            this.pirce = pirce;
+            this.price = price;
         }
 
         @Override
@@ -81,7 +79,7 @@ class Student {
 
         @Override
         public String toString() {
-            return "宮保雞丁:" + super.toString();
+            return "宮保雞丁" + super.toString();
         }
     }
 
@@ -90,15 +88,16 @@ class Student {
             super(amount, price);
         }
         public String toString() {
-            return "炒飯:" + super.toString();
+            return "炒飯" + super.toString();
         }
     }
+
     class friedVegetables extends menu {
-        friedRice(int amount, int price) {
+        friedVegetables(int amount, int price) {
             super(amount, price);
         }
         public String toString() {
-            return "炒菜菜:" + super.toString();
+            return "炒菜" + super.toString();
         }
     }
 }
