@@ -19,7 +19,7 @@ public class ex1 {
         String sel, temp;
         sel = sc.nextLine();
         while (k < dataCase) {
-            table_1[k] = new student_grade();
+            table_1[k] = new student_grade(); //初始化
             System.out.printf("請輸入學號:");
             table_1[k].id = sc.nextLine();
             System.out.printf("請輸入姓名:");

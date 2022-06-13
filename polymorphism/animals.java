@@ -1,4 +1,7 @@
 class Animal {
+    Animal(int i, int j){
+        
+    }
     void move() {
         System.out.println("動物怎麼動?");
     }

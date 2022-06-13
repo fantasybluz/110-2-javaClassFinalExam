@@ -6,6 +6,7 @@ interface animal3{
     void say();
 }
 interface animal_like extends animal3{
+    int year=0;
     void habbit();
     void favor();
 }

@@ -1,14 +1,14 @@
 import java.util.*;
 interface animal{
-    int weight=0;
-    int height=0;
+    int weight = 10;
+    int height = 10;
     void move();
     void say();
 }
 class people implements animal{
-    public void move(){
-        System.out.println("雙腳移動");
-    }
+    // public void move(){
+    //     System.out.println("雙腳移動");
+    // }
     public void say(){
         System.out.println("說人話");
     }

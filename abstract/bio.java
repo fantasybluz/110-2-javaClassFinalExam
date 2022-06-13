@@ -1,17 +1,13 @@
 import java.util.*;
 abstract class Animal{
     int height, weight;
-    void move(){
-        System.out.println("移動");
-    }
-    void voice(){
-        System.out.println("發出聲音");
-    }
+    void move(){}
+    void voice(){}
 }
 
 class people extends Animal{
-    int height = 180;
-    int weight = 70;
+    // int height = 180;
+    // int weight = 70;
     // void move(){
     //     System.out.println("用腳走路");
     // }
@@ -22,6 +18,6 @@ class people extends Animal{
 public class bio {
     public static void main(String[] args) {
         people mark = new people();
-        System.out.println(mark.height);
+        mark.move();
     }  
 }

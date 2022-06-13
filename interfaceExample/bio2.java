@@ -5,7 +5,7 @@ interface animal2{
     void move();
     void say();
 }
-class people2 implements animal{
+class people2 implements animal2{
     public void move(){
         System.out.println("雙腳移動");
     }
@@ -16,7 +16,7 @@ class people2 implements animal{
         return "people";
     }
 }
-class monkey implements animal{
+class monkey implements animal2{
     public void move(){
         System.out.println("爬行");
     }
