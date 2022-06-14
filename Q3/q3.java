@@ -2,7 +2,7 @@ import java.util.*;
 public class q3 {
     static Scanner sc = new Scanner(System.in);
 
-    static String inputScore() {
+    static String inputAmount() {
         String a = sc.nextLine();
         return a;
     }
@@ -17,11 +17,10 @@ public class q3 {
         sc.nextLine();
         Sheet[] scoreArr = new Sheet[num];
         for (int i = 0; i < num; i++) {
-            scoreArr[i] = new Sheet(i + 1, inputName(), inputScore(), inputScore(), inputScore());
+            scoreArr[i] = new Sheet(i + 1, inputName(), inputAmount(), inputAmount(), inputAmount());
         }
 
         for (int i = 0; i < num; i++) {
-            System.out.println("I had run"+i+"times");
             System.out.println(scoreArr[i]);
         }
         sc.close();
