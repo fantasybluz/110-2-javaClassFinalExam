@@ -9,8 +9,8 @@ class myCar{
     double Efficient;
     
     public myCar(double g, double e){
-        GasTank = g;
-        Efficient = e;
+        this.GasTank = g;
+        this.Efficient = e;
     }
     public void go(double distance) throws NoGasException{
         double GasNeed = distance/Efficient;
